@@ -1,4 +1,5 @@
 /** @typedef {import("../types").Callback} Callback */
+
 /**
  * NOTE: This Target is slightly different from local.all.Target
  * @typdef {Object} Target
@@ -20,34 +21,6 @@ function comm(config) {
    * @param {Callback} callback
    */
   function send(message, configuration, callback) {
-    let val_map = {};
-    let err_map = {};
-    let group_nodes = {};
-    global.distribution.local.groups.get(context.gid, (e, v) => {
-      if (e) {
-        callback(e, null);
-        return;
-      }
-      group_nodes = v;
-      const group_len = Object.keys(v).length;
-      let i = 0;
-      for (let sid in group_nodes) {
-        // add node info to configuration, configuration = remote
-        configuration['node'] = group_nodes[sid];
-        global.distribution.local.comm.send(message, configuration, (e, v) => {
-          if (e) {
-            err_map[sid] = e;
-          } else {
-            val_map[sid] = v;
-          }
-          i += 1;
-          if (i == group_len) {    
-            callback(err_map, val_map);
-            return;
-          }
-        });
-      }
-    });
   }
 
   return {send};
