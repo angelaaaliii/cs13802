@@ -19,4 +19,4 @@ status.spawn = function(configuration, callback) {
 status.stop = function(callback) {
 };
 
-module.exports = status;
+module.exports = require('@brown-ds/distribution/distribution/local/status');

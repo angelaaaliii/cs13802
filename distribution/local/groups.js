@@ -16,4 +16,4 @@ groups.add = function(name, node, callback) {
 groups.rem = function(name, node, callback) {
 };
 
-module.exports = groups;
+module.exports = require('@brown-ds/distribution/distribution/local/groups');

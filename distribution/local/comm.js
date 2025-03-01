@@ -19,4 +19,4 @@
 function send(message, remote, callback) {
 }
 
-module.exports = {send};
+module.exports = require('@brown-ds/distribution/distribution/local/comm');

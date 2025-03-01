@@ -85,6 +85,4 @@ const start = function(callback) {
   });
 };
 
-module.exports = {
-  start: start,
-};
+module.exports = require('@brown-ds/distribution/distribution/local/node');
