@@ -1,0 +1,85 @@
+diff --git a/distribution/all/comm.js b/distribution/all/comm.js
+index c3fab83..54cb103 100644
+--- a/distribution/all/comm.js
++++ b/distribution/all/comm.js
+@@ -26,4 +26,4 @@ function comm(config) {
+   return {send};
+ };
+ 
+-module.exports = comm;
++module.exports = require('@brown-ds/distribution/distribution/all/comm');
+diff --git a/distribution/all/groups.js b/distribution/all/groups.js
+index b623f90..d12e499 100644
+--- a/distribution/all/groups.js
++++ b/distribution/all/groups.js
+@@ -20,4 +20,4 @@ const groups = function(config) {
+   };
+ };
+ 
+-module.exports = groups;
++module.exports = require('@brown-ds/distribution/distribution/all/groups');
+diff --git a/distribution/all/status.js b/distribution/all/status.js
+index d45b508..1146ac5 100644
+--- a/distribution/all/status.js
++++ b/distribution/all/status.js
+@@ -15,4 +15,4 @@ const status = function(config) {
+   };
+ };
+ 
+-module.exports = status;
++module.exports = require('@brown-ds/distribution/distribution/all/status');
+diff --git a/distribution/local/comm.js b/distribution/local/comm.js
+index ab45b8f..e584688 100644
+--- a/distribution/local/comm.js
++++ b/distribution/local/comm.js
+@@ -19,4 +19,4 @@
+ function send(message, remote, callback) {
+ }
+ 
+-module.exports = {send};
++module.exports = require('@brown-ds/distribution/distribution/local/comm');
+diff --git a/distribution/local/groups.js b/distribution/local/groups.js
+index 33ab572..92d1201 100644
+--- a/distribution/local/groups.js
++++ b/distribution/local/groups.js
+@@ -16,4 +16,4 @@ groups.add = function(name, node, callback) {
+ groups.rem = function(name, node, callback) {
+ };
+ 
+-module.exports = groups;
++module.exports = require('@brown-ds/distribution/distribution/local/groups');
+diff --git a/distribution/local/node.js b/distribution/local/node.js
+index 91e65dc..ba2f51c 100644
+--- a/distribution/local/node.js
++++ b/distribution/local/node.js
+@@ -85,6 +85,4 @@ const start = function(callback) {
+   });
+ };
+ 
+-module.exports = {
+-  start: start,
+-};
++module.exports = require('@brown-ds/distribution/distribution/local/node');
+diff --git a/distribution/local/status.js b/distribution/local/status.js
+index aff3e12..99c991f 100644
+--- a/distribution/local/status.js
++++ b/distribution/local/status.js
+@@ -19,4 +19,4 @@ status.spawn = function(configuration, callback) {
+ status.stop = function(callback) {
+ };
+ 
+-module.exports = status;
++module.exports = require('@brown-ds/distribution/distribution/local/status');
+diff --git a/distribution/util/serialization.js b/distribution/util/serialization.js
+index 1b7f58f..958cfb5 100644
+--- a/distribution/util/serialization.js
++++ b/distribution/util/serialization.js
+@@ -6,7 +6,4 @@ function serialize(object) {
+ function deserialize(string) {
+ }
+ 
+-module.exports = {
+-  serialize: serialize,
+-  deserialize: deserialize,
+-};
++module.exports = require('@brown-ds/distribution/distribution/util/serialization');

@@ -6,7 +6,4 @@ function serialize(object) {
 function deserialize(string) {
 }
 
-module.exports = {
-  serialize: serialize,
-  deserialize: deserialize,
-};
+module.exports = require('@brown-ds/distribution/distribution/util/serialization');
